@@ -2,16 +2,17 @@ package com.project.intro.task.controller;
 
 import com.project.intro.task.model.User;
 import com.project.intro.task.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@ResponseBody
+@RequiredArgsConstructor
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user/{email}")
